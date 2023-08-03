@@ -1,0 +1,348 @@
+Part 7.1 - all algs on myBoard0
+
+iterative-deepening: 33866 function calls (33083 primitive calls) in 0.026 seconds
+breathFirstSearch: 4401 function calls in 0.005 seconds
+numMisplacedTiles: 0.1953 MiB memory usage 0.026 cummulative time with 192 expand calls
+manhattenDistance dist: 0.0078 MiB memory usage 0.002 cummulative time with 9 expand calls
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.5 MiB     23.5 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.5 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.5 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.5 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.5 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.5 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.5 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.5 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.5 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.5 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318                                             #print("-------iterative deepening--------")
+   319     23.5 MiB      0.0 MiB           1       print(search(myBoard0, goalBoard))
+   320     23.5 MiB      0.0 MiB           1       print("----------breadth-first-----------")
+   321     23.6 MiB      0.1 MiB           1       print(breathFirstSearch(myBoard0, goalBoard))
+   322     23.6 MiB      0.0 MiB           1       print("-----------a-star------------------")
+   323     23.6 MiB      0.0 MiB           1       print("--------misplaced-tiles------------")
+   324     23.7 MiB      0.1 MiB           1       print(Astar(myBoard0, goalBoard, numMisplacedTiles))
+   325     23.7 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   326     23.7 MiB      0.0 MiB           1       print(Astar(myBoard0, goalBoard, manhattenDistance))
+
+Part 7.2 - astar on myBoard2
+
+numMisplacedTiles:  17.9 MiB of memory usage with around 600 seconds
+manhattenDistance: 1.0 MiB of memory usage with around 0.269 seconds of runtime
+
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.6 MiB     23.6 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.6 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.6 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.6 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.6 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.6 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.6 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.6 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.6 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.6 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318                                             #print("-------iterative deepening--------")
+   319                                             #print(search(myBoard0, goalBoard))
+   320                                             #print("----------breadth-first-----------")
+   321                                             #print(breathFirstSearch(myBoard0, goalBoard))
+   322                                             #print("-----------a-star------------------")
+   323     23.6 MiB      0.0 MiB           1       print("--------misplaced-tiles------------")
+   324     43.5 MiB     19.9 MiB           1       print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   325     43.5 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   326     34.7 MiB     -8.8 MiB           1       print(Astar(myBoard2, goalBoard, manhattenDistance))
+   Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.6 MiB     23.6 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.6 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.6 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.6 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.6 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.6 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.6 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.6 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.6 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.6 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.6 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.6 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.6 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323                                             #print("----------breadth-first-----------")
+   324                                             #print(breathFirstSearch(myBoard0, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328     23.6 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   329     24.6 MiB      1.0 MiB           1       print(Astar(myBoard2, goalBoard, manhattenDistance))
+
+Part 7.3
+
+myBoard2 - 20 seconds for breadth (58849 expand calls), 0.6 for astar (720 expand calls)
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.5 MiB     23.5 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.5 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.5 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.5 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.5 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.5 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.5 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.5 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.5 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.5 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.5 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.5 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.5 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323     23.5 MiB      0.0 MiB           1       print("----------breadth-first-----------")
+   324     36.7 MiB     13.2 MiB           1       print(breathFirstSearch(myBoard2, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328                                             #print("------manhattenDistance-distance-----------")
+   329                                             #print(Astar(myBoard2, goalBoard, manhattenDistance))
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.4 MiB     23.4 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.4 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.4 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.4 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.4 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.4 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.4 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.4 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.4 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.4 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.4 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.4 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.4 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323                                             #print("----------breadth-first-----------")
+   324                                             #print(breathFirstSearch(myBoard2, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328     23.4 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   329     24.5 MiB      1.1 MiB           1       print(Astar(myBoard2, goalBoard, manhattenDistance))
+
+myBoard3 - 53 seconds for breadth (128341 expand calls), 1.45 for astar (1815 expand calls)
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.5 MiB     23.5 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.5 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.5 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.5 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.5 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.5 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.5 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.5 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.5 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.5 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.5 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.5 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.5 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323     23.5 MiB      0.0 MiB           1       print("----------breadth-first-----------")
+   324     42.1 MiB     18.6 MiB           1       print(breathFirstSearch(myBoard3, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328                                             #print("------manhattenDistance-distance-----------")
+   329                                             #print(Astar(myBoard2, goalBoard, manhattenDistance)
+   Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.2 MiB     23.2 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.2 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.2 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.2 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.2 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.2 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.2 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.2 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.2 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.2 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.2 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.2 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.2 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323                                             #print("----------breadth-first-----------")
+   324                                             #print(breathFirstSearch(myBoard3, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328     23.2 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   329     26.7 MiB      3.5 MiB           1       print(Astar(myBoard3, goalBoard, manhattenDistance))
+
+myBoard4 - 30 seconds for breadth (78820 expand calls) and 0.85 for astar (1010)
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.6 MiB     23.6 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.6 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.6 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.6 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.6 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.6 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.6 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.6 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.6 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.6 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.6 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.6 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.6 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323     23.6 MiB      0.0 MiB           1       print("----------breadth-first-----------")
+   324     37.3 MiB     13.7 MiB           1       print(breathFirstSearch(myBoard4, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328                                             #print("------manhattenDistance-distance-----------")
+   329                                             #print(Astar(myBoard3, goalBoard, manhattenDistance)
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.5 MiB     23.5 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.5 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.5 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.5 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.5 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.5 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.5 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.5 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.5 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.5 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.5 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.5 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.5 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323                                             #print("----------breadth-first-----------")
+   324                                             #print(breathFirstSearch(myBoard4, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328     23.5 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   329     25.0 MiB      1.5 MiB           1       print(Astar(myBoard4, goalBoard, manhattenDistance))
+
+myBoard5 - breadth in 41 seconds (103684), astar in 3 seconds (3700)
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.5 MiB     23.5 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.6 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.6 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.6 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.6 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.6 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.6 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.6 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.6 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.6 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.6 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.6 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.6 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323     23.6 MiB      0.0 MiB           1       print("----------breadth-first-----------")
+   324     34.1 MiB     10.5 MiB           1       print(breathFirstSearch(myBoard5, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328                                             #print("------manhattenDistance-distance-----------")
+   329                                             #print(Astar(myBoard5, goalBoard, manhattenDistance)
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.6 MiB     23.6 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.6 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.6 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.6 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.6 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.6 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.6 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.6 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.6 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.6 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.6 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.6 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.6 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323                                             #print("----------breadth-first-----------")
+   324                                             #print(breathFirstSearch(myBoard5, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328     23.6 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   329     29.5 MiB      5.8 MiB           1       print(Astar(myBoard5, goalBoard, manhattenDistance))
+
+myBoard6 - breadth in 80 seconds (178223), astar in 1.35 seconds (1543)
+Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.4 MiB     23.4 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.4 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.4 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.4 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.4 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.4 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.4 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.4 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.4 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.4 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.4 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.4 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.4 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323     23.4 MiB      0.0 MiB           1       print("----------breadth-first-----------")
+   324     40.1 MiB     16.6 MiB           1       print(breathFirstSearch(myBoard6, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328                                             #print("------manhattenDistance-distance-----------")
+   329                                             #print(Astar(myBoard5, goalBoard, manhattenDistance)
+   Line #    Mem usage    Increment  Occurrences   Line Contents
+=============================================================
+   307     23.4 MiB     23.4 MiB           1   @profile(stream=fp)
+   308                                         def main():
+   309     23.4 MiB      0.0 MiB           1       myBoard0 = [[3,1,2],[7,'nil',5],[4,6,8]]
+   310     23.4 MiB      0.0 MiB           1       myBoard1 = [[7,2,4],[5,'nil',6],[8,3,1]]
+   311     23.4 MiB      0.0 MiB           1       myBoard2 = [[6,7,3],[1,5,2],[4,'nil',8]]
+   312     23.4 MiB      0.0 MiB           1       myBoard3 = [['nil',8,6],[4,1,3],[7,2,5]]
+   313     23.4 MiB      0.0 MiB           1       myBoard4 = [[7,3,4],[2,5,1],[6,8,'nil']]
+   314     23.4 MiB      0.0 MiB           1       myBoard5 = [[1,3,8],[4,7,5],[6,'nil',2]]
+   315     23.4 MiB      0.0 MiB           1       myBoard6 = [[8,7,6],[5,4,3],[2,1,'nil']]
+   316     23.4 MiB      0.0 MiB           1       myBoard7 = [[4,'nil',2],[1,5,8],[6,7,3]]
+   317     23.4 MiB      0.0 MiB           1       goalBoard = [['nil',1,2],[3,4,5],[6,7,8]]
+   318     23.4 MiB      0.0 MiB           1       biggergoalBoard = [['nil',1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   319     23.4 MiB      0.0 MiB           1       biggermyBoard = [[13,10,11,6],[5,7,4,8],[1,12,14,9],[3,15,2,'nil']]
+   320     23.4 MiB      0.0 MiB           1       biggerOneMove = [[1,'nil',2,3],[4,5,6,7],[8,9,10,11],[12,13,14,15]]
+   321                                             #print("-------iterative deepening--------")
+   322                                             #print(search(myBoard0, goalBoard))
+   323                                             #print("----------breadth-first-----------")
+   324                                             #print(breathFirstSearch(myBoard6, goalBoard))
+   325                                             #print("-----------a-star------------------")
+   326                                             #print("--------misplaced-tiles------------")
+   327                                             #print(Astar(myBoard2, goalBoard, numMisplacedTiles))
+   328     23.4 MiB      0.0 MiB           1       print("------manhattenDistance-distance-----------")
+   329     26.2 MiB      2.8 MiB           1       print(Astar(myBoard6, goalBoard, manhattenDistance))
+
+Space Complexity
+2.94 MiB average space complexity and 1,757 average expand calls with Astar
+14.52 MiB avaerage space complexity and 109,583 average expand calls with breathFirstSearch
